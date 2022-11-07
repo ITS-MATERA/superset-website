@@ -11,9 +11,9 @@ const CenterWrapper = ({ title = "Superset", tag = "Data Explorer" }) => {
           <div className="col-12">
             <div className="it-header-center-content-wrapper">
               <div className="it-brand-wrapper">
-                <a href="#">
+                <a href="/">
                   <svg className="icon" aria-hidden="true">
-                    <use href="bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
+                    <use href="/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
                   </svg>
                   <div className="it-brand-text">
                     <div className="it-brand-title">{title}</div>
@@ -30,21 +30,21 @@ const CenterWrapper = ({ title = "Superset", tag = "Data Explorer" }) => {
                     <li>
                       <a href="#" aria-label="Facebook" target="_blank">
                         <svg className="icon">
-                          <use href="bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                          <use href="/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
                         </svg>
                       </a>
                     </li>
                     <li>
                       <a href="#" aria-label="Github" target="_blank">
                         <svg className="icon">
-                          <use href="bootstrap-italia/dist/svg/sprites.svg#it-github"></use>
+                          <use href="/bootstrap-italia/dist/svg/sprites.svg#it-github"></use>
                         </svg>
                       </a>
                     </li>
                     <li>
                       <a href="#" aria-label="Twitter" target="_blank">
                         <svg className="icon">
-                          <use href="bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                          <use href="/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
                         </svg>
                       </a>
                     </li>

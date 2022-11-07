@@ -61,7 +61,7 @@ const Dropdown = ({
         <span className={as !== "li" ? "visually-hidden" : ""}>{label}</span>
         {selected && <span>{selected}</span>}
         <svg className="icon icon-xs">
-          <use href="bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+          <use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
         </svg>
       </a>
       <div className="dropdown-menu" role="region">

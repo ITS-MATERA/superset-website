@@ -23,7 +23,7 @@ const Layout = ({ children, fullwidth = false }) => {
         </div>
       </div>
       <Footer title="Superset" tag="Data Explorer" />
-      <Script src="bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js" />
+      <Script src="/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js" />
     </>
   );
 };

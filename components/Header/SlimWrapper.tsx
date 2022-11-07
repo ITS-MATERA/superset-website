@@ -11,7 +11,7 @@ export type SlimWrapperProps = {
 };
 const SlimWrapper = ({
   title = "Superset",
-  href = "#",
+  href = "/",
   links = [],
 }: SlimWrapperProps) => {
   const { t } = useTranslation("common");
@@ -36,7 +36,7 @@ const SlimWrapper = ({
                   >
                     <span>{title}</span>
                     <svg className="icon" aria-hidden="true">
-                      <use href="bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+                      <use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
                     </svg>
                   </a>
                   <div className="link-list-wrapper collapse" id="menu1a">

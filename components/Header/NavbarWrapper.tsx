@@ -26,7 +26,7 @@ const NavbarWrapper = ({ menu = [] }: NavbarWrapperProps) => {
                 data-bs-target="#nav1"
               >
                 <svg className="icon bg-override">
-                  <use href="bootstrap-italia/dist/svg/sprites.svg#it-burger"></use>
+                  <use href="/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use>
                 </svg>
               </button>
               <div
@@ -41,7 +41,7 @@ const NavbarWrapper = ({ menu = [] }: NavbarWrapperProps) => {
                       {t("header.navbar.principal_nav_close")}
                     </span>
                     <svg className="icon">
-                      <use href="bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use>
+                      <use href="/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use>
                     </svg>
                   </button>
                 </div>

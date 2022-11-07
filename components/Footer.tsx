@@ -15,7 +15,7 @@ const Footer = ({ title, tag }: FooterProps) => {
                 <div className="it-brand-wrapper">
                   <a href="#">
                     <svg className="icon">
-                      <use href="bootstrap-italia/dist/svg/sprites.svg#it-code-circle"></use>
+                      <use href="/bootstrap-italia/dist/svg/sprites.svg#it-code-circle"></use>
                     </svg>
                     <div className="it-brand-text">
                       <h2 className="no_toc">{title}</h2>
