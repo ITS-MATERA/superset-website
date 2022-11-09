@@ -1,6 +1,7 @@
+import { SUPERSET_DOMAIN, dataProvider } from "../../config";
+
 import { Dashboard } from "superset-dashboard";
 import { Layout } from "../../components";
-import { dataProvider } from "../../config";
 import { useRouter } from "next/router";
 
 const Post = () => {
@@ -12,7 +13,7 @@ const Post = () => {
       {id && (
         <Dashboard
           id={id}
-          domain="http://localhost:8088"
+          domain={SUPERSET_DOMAIN}
           dataProvider={dataProvider}
           fullheight
         />

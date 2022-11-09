@@ -1,15 +1,15 @@
 import { Dashboard, DefaultDataProvider } from "superset-dashboard";
+import { SUPERSET_DOMAIN, dataProvider } from "../config";
 
 import Layout from "../components/Layout";
-import { dataProvider } from "../config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Index = () => {
   return (
     <Layout fullwidth>
       <Dashboard
-        id="980cabb2-8a5b-434f-831b-469dd53172e5"
-        domain="http://localhost:8088"
+        id="3166c187-bd00-4ec3-8687-d11c755d3d64"
+        domain={SUPERSET_DOMAIN}
         dataProvider={dataProvider}
         fullheight
       />
