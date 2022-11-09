@@ -1,7 +1,7 @@
 import Dropdown from "./Dropdown";
 import { MenuItem } from "../Types";
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 export type NavbarWrapperProps = {
   menu: MenuItem[];
 };

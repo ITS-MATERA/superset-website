@@ -1,4 +1,7 @@
+import Image from "next/image";
 import React from "react";
+import classes from "./CenterWrapper.module.scss";
+import logo from "../../public/logo.png";
 export type CenterWrapperProps = {
   title?: string;
   tag?: string;
@@ -12,9 +15,17 @@ const CenterWrapper = ({ title = "Superset", tag = "Data Explorer" }) => {
             <div className="it-header-center-content-wrapper">
               <div className="it-brand-wrapper">
                 <a href="/">
-                  <svg className="icon" aria-hidden="true">
+                  <Image
+                    className={classes.logo}
+                    src={logo}
+                    width={64}
+                    height={64}
+                    alt={title}
+                    quality={100}
+                  />
+                  {/* <svg className="icon" aria-hidden="true">
                     <use href="/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
-                  </svg>
+                  </svg> */}
                   <div className="it-brand-text">
                     <div className="it-brand-title">{title}</div>
                     <div className="it-brand-tagline d-none d-md-block">

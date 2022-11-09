@@ -6,6 +6,7 @@ import React from "react";
 import Script from "next/script";
 import classes from "./Layout.module.scss";
 import classnames from "classnames";
+import favicon from "../public/favicon.ico";
 import { useTranslation } from "next-i18next";
 export type LayoutProps = {
   children: React.ReactNode;
@@ -13,14 +14,21 @@ export type LayoutProps = {
 };
 const Layout = ({ children, fullwidth = false }) => {
   const { t: seo } = useTranslation("seo");
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
         <title>{seo("title")}</title>
+        <meta name="description" content={seo("description")} />
+        <meta name="keywords" content={seo("keywords")} />
+        <meta name="author" content={seo("author")} />
+        {/** favicon */}
+        <link rel="icon" href={favicon.src} />
+
         <NextSeo title={seo("title")} description={seo("description")} />
       </Head>
       <div>
-        <Header />
+        <Header title={t("header.top.title")} tag={t("header.top.tag")} />
         <div
           className={classnames(
             "container",
@@ -30,7 +38,7 @@ const Layout = ({ children, fullwidth = false }) => {
           {children}
         </div>
       </div>
-      <Footer title="Superset" tag="Data Explorer" />
+      <Footer title={t("footer.title")} tag={t("footer.tag")} />
       <Script src="/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js" />
     </>
   );

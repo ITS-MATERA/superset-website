@@ -1,6 +1,8 @@
 {
 	"header": {
 		"top": {
+			"tag": "Agenzia Regionale Strategica per la Salute ed il Sociale",
+			"title": "AReSS",
 			"login": "Accedi",
 			"choose_lang": "Seleziona Lingua",
 			"accessory_nav": "Navigazione accessoria"
@@ -10,5 +12,9 @@
 			"principal_nav_toggle": "Mostra/Nascondi la navigazione",
 			"principal_nav_close": "Nascondi la navigazione"
 		}
+	},
+	"footer": {
+		"title": "AReSS",
+		"tag": "ReSS PUGLIA, Lungomare Nazario Sauro, 33 - 70121 Bari(BA) - Partita IVA : 08238890720 - Codice Fiscale: 93496810727"
 	}
 }

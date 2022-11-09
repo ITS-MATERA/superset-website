@@ -8,9 +8,11 @@ export type HeaderProps = {
   title?: string;
   href?: string;
   links?: Link[];
+  tag?: string;
 };
 const Header = ({
   title = "Superset",
+  tag = "Superset",
   href = "/",
   links = [],
 }: HeaderProps) => {
@@ -18,7 +20,7 @@ const Header = ({
     <div className="it-header-wrapper">
       <SlimWrapper title={title} href={href} links={links} />
       <div className="it-nav-wrapper">
-        <CenterWrapper />
+        <CenterWrapper title={title} tag={tag} />
         <NavbarWrapper menu={[]} />
       </div>
     </div>

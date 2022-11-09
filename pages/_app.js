@@ -1,4 +1,4 @@
-import "bootstrap-italia/dist/css/bootstrap-italia.min.css";
+import "styles/globals.scss";
 
 import { appWithTranslation } from "next-i18next";
 

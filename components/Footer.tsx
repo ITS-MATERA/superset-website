@@ -11,7 +11,7 @@ const Footer = ({ title, tag }: FooterProps) => {
         <div className="container">
           <section>
             <div className="row clearfix">
-              <div className="col-sm-12">
+              <div className="col-sm-12 col-lg-4 col-md-6">
                 <div className="it-brand-wrapper">
                   <a href="#">
                     <svg className="icon">
@@ -19,7 +19,17 @@ const Footer = ({ title, tag }: FooterProps) => {
                     </svg>
                     <div className="it-brand-text">
                       <h2 className="no_toc">{title}</h2>
-                      <h3 className="no_toc d-none d-md-block">{tag}</h3>
+                      <hr />
+                      <h3 className="no_toc d-none d-md-block">
+                        {tag.split(" - ").map((item, index) => (
+                          <span
+                            style={{ display: "block", clear: "both" }}
+                            key={index}
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </h3>
                     </div>
                   </a>
                 </div>
