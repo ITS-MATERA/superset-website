@@ -1,7 +1,12 @@
 import React from "react";
+import { SUPERSET_DOMAIN } from "../../config";
 import { useTranslation } from "next-i18next";
 
-const AccessTopWrapper = ({ link = "/login" }: { link?: string }) => {
+const AccessTopWrapper = ({
+  link = `${SUPERSET_DOMAIN}`,
+}: {
+  link?: string;
+}) => {
   const { t } = useTranslation("common");
 
   return (

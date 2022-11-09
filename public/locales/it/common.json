@@ -1,0 +1,14 @@
+{
+	"header": {
+		"top": {
+			"login": "Accedi",
+			"choose_lang": "Seleziona Lingua",
+			"accessory_nav": "Navigazione accessoria"
+		},
+		"navbar": {
+			"principal_nav": "Navigazione principale",
+			"principal_nav_toggle": "Mostra/Nascondi la navigazione",
+			"principal_nav_close": "Nascondi la navigazione"
+		}
+	}
+}
