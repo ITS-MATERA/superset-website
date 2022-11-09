@@ -5,6 +5,9 @@ const path = require("path");
 const nextConfig = {
   i18n,
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    if (!dev) {
+      return config;
+    }
     config.plugins.push(
       new CopyPlugin({
         patterns: [
