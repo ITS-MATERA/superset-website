@@ -1,4 +1,5 @@
 import CenterWrapper from "./Header/CenterWrapper";
+import { DASHBOARDS_TO_DISPLAY } from "../config";
 import { Link } from "./Types";
 import NavbarWrapper from "./Header/NavbarWrapper";
 import React from "react";
@@ -21,14 +22,7 @@ const Header = ({
       <SlimWrapper title={title} href={href} links={links} />
       <div className="it-nav-wrapper">
         <CenterWrapper title={title} tag={tag} />
-        <NavbarWrapper
-          menu={[
-            {
-              label: "Popolazione",
-              href: "/dashboard/b70bcc67-d8fb-476b-88a0-aa2688137561",
-            },
-          ]}
-        />
+        <NavbarWrapper menu={DASHBOARDS_TO_DISPLAY} />
       </div>
     </div>
   );
