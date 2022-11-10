@@ -2,6 +2,7 @@ import { SUPERSET_DOMAIN, dataProvider } from "../../config";
 
 import { Dashboard } from "superset-dashboard";
 import { Layout } from "../../components";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
 const Post = () => {
@@ -21,5 +22,11 @@ const Post = () => {
     </Layout>
   );
 };
-
+export const getServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale)),
+    },
+  };
+};
 export default Post;

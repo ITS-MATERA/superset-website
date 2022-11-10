@@ -21,7 +21,14 @@ const Header = ({
       <SlimWrapper title={title} href={href} links={links} />
       <div className="it-nav-wrapper">
         <CenterWrapper title={title} tag={tag} />
-        <NavbarWrapper menu={[]} />
+        <NavbarWrapper
+          menu={[
+            {
+              label: "Popolazione",
+              href: "/dashboard/b70bcc67-d8fb-476b-88a0-aa2688137561",
+            },
+          ]}
+        />
       </div>
     </div>
   );
