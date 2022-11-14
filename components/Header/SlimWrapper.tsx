@@ -17,7 +17,7 @@ const SlimWrapper = ({
   const { t } = useTranslation("common");
   return (
     <div className="it-header-slim-wrapper">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12">
             <div className="it-header-slim-wrapper-content">

@@ -9,7 +9,7 @@ export type CenterWrapperProps = {
 const CenterWrapper = ({ title = "Superset", tag = "Data Explorer" }) => {
   return (
     <div className="it-header-center-wrapper">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12">
             <div className="it-header-center-content-wrapper">

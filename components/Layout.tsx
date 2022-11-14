@@ -4,8 +4,8 @@ import Header from "./Header";
 import { NextSeo } from "next-seo";
 import React from "react";
 import Script from "next/script";
+import classNames from "classnames";
 import classes from "./Layout.module.scss";
-import classnames from "classnames";
 import favicon from "../public/favicon.ico";
 import { useTranslation } from "next-i18next";
 export type LayoutProps = {
@@ -15,6 +15,7 @@ export type LayoutProps = {
 const Layout = ({ children, fullwidth = false }) => {
   const { t: seo } = useTranslation("seo");
   const { t } = useTranslation("common");
+
   return (
     <>
       <Head>
@@ -30,9 +31,9 @@ const Layout = ({ children, fullwidth = false }) => {
       <div>
         <Header title={t("header.top.title")} tag={t("header.top.tag")} />
         <div
-          className={classnames(
-            "container",
-            fullwidth ? classes.fullwidth : "my-2"
+          className={classNames(
+            "container-fluid",
+            fullwidth && classes.fullwidth
           )}
         >
           {children}

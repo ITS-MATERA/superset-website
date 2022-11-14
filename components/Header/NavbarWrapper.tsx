@@ -9,7 +9,7 @@ const NavbarWrapper = ({ menu = [] }: NavbarWrapperProps) => {
   const { t } = useTranslation("common");
   return (
     <div className="it-header-navbar-wrapper">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12">
             <nav

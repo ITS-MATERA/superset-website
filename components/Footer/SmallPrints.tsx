@@ -2,7 +2,7 @@ import React from "react";
 
 const SmallPrints = () => (
   <div className="it-footer-small-prints clearfix">
-    <div className="container">
+    <div className="container-fluid">
       <h3 className="visually-hidden">Sezione Link Utili</h3>
       <ul className="it-footer-small-prints-list list-inline mb-0 d-flex flex-column flex-md-row">
         <li className="list-inline-item">

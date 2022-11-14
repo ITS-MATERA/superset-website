@@ -8,7 +8,7 @@ const Footer = ({ title, tag }: FooterProps) => {
   return (
     <footer className="it-footer">
       <div className="it-footer-main">
-        <div className="container">
+        <div className="container-fluid">
           <section>
             <div className="row clearfix">
               <div className="col-sm-12 col-lg-4 col-md-6">
