@@ -1,6 +1,6 @@
 import { SUPERSET_DOMAIN, dataProvider } from "../../config";
 
-import { Dashboard } from "superset-dashboard";
+import { Dashboard } from "superset-dashboard-sdk";
 import { Layout } from "../../components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
@@ -17,6 +17,9 @@ const Post = () => {
           domain={SUPERSET_DOMAIN}
           dataProvider={dataProvider}
           fullheight
+          uiConfig={{
+            hideTitle: true,
+          }}
         />
       )}
     </Layout>

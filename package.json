@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@superset-ui/embedded-sdk": "^0.1.0-alpha.7",
     "bootstrap-italia": "^2.0.8",
     "classnames": "^2.3.2",
     "i18next": "^22.0.4",
@@ -19,7 +18,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.55.0",
-    "superset-dashboard": "^1.0.0"
+    "superset-dashboard-sdk": "^1.0.0-alpha.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",

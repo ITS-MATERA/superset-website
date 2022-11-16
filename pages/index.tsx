@@ -4,7 +4,7 @@ import {
   dataProvider,
 } from "../config";
 
-import { Dashboard } from "superset-dashboard";
+import { Dashboard } from "superset-dashboard-sdk";
 import Layout from "../components/Layout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 

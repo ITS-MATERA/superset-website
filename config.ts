@@ -1,10 +1,9 @@
-// Site configuration file.
-// Your work should be placed here.
-import { DefaultDataProvider } from "superset-dashboard";
+import { DefaultDataProvider } from "superset-dashboard-sdk";
 import { MenuItem } from "./components/Types";
+import StaticConfigProvider from "./components/Superset/StaticConfigProvider";
 
-export const SUPERSET_DOMAIN = "http://localhost:9000";
-export const SUPERSET_ENDPOINT = "http://localhost:8088";
+export const SUPERSET_DOMAIN = "https://aress.its.engineering";
+export const SUPERSET_ENDPOINT = SUPERSET_DOMAIN;
 export const SUPERSET_GUEST_USER = "guest";
 export const SUPERSET_GUEST_PASS = "guest";
 
@@ -13,8 +12,31 @@ export const dataProvider = new DefaultDataProvider(SUPERSET_ENDPOINT, {
   password: SUPERSET_GUEST_PASS,
 });
 
-// Id of the dashboard to display on the home page
-export const HOME_PAGE_DASHBOARD_ID = "bcf5ca3d-1a68-4613-b585-2b4f265b61a0";
-// List of dashboards to display.
-// This list will be converted to a menu on the home page
-export const DASHBOARDS_TO_DISPLAY: MenuItem[] = [];
+export const configProvider = new StaticConfigProvider()
+  .addDashboardConfig({
+    id: 4,
+    uuid: "a4b1e3e4-827a-46a2-9fa0-0259816c64ec",
+    name: "Cronicità",
+    menu: "Tumori",
+    slug: "tumori-cronicita",
+  })
+  .setHomePageDashboardConfig("tumori-cronicita");
+
+export const HOME_PAGE_DASHBOARD_ID = "53740556-c6dc-4ab2-953e-f33917e07dbf";
+
+export const DASHBOARDS_TO_DISPLAY: MenuItem[] = [
+  {
+    label: "DEMO",
+    sections: [
+      {
+        name: "Tumori",
+        items: [
+          {
+            label: "Cronicità",
+            href: "/dashboard/a4b1e3e4-827a-46a2-9fa0-0259816c64ec",
+          },
+        ],
+      },
+    ],
+  },
+];
