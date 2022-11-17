@@ -36,12 +36,16 @@ export type DashboardConfig = {
  * Define how to implement config providers.
  */
 export interface ConfigProviderInterface {
-  /**
-   * Get the dashboard configuration by its slug.
-   */
+  /** Get the dashboard configuration by its slug. */
   getHomePageDashboardConfig(): DashboardConfig | undefined;
-  /**
-   * Retrieve list of dashboards to display.
-   */
+  /** Retrieve list of dashboards to display. */
   getDashboardConfigs(): DashboardConfig[];
+  /** Get the dashboard configuration by its slug. */
+  getDashboardConfigBySlug(slug: string): DashboardConfig | undefined;
+  /** Get the dashboard configuration by its uuid. */
+  getDashboardConfigByUuid(uuid: string): DashboardConfig | undefined;
+  /** Get the dashboard configuration by its id. */
+  getDashboardConfigById(id: number): DashboardConfig | undefined;
+  /** Get the dashboard configuration by its slug, uuid or id. */
+  getDashboardConfig(identifier: string | number): DashboardConfig | undefined;
 }

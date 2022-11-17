@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./CenterWrapper.module.scss";
-import logo from "../../public/logo.png";
+import logo from "public/logo.png";
 export type CenterWrapperProps = {
   title?: string;
   tag?: string;

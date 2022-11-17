@@ -5,7 +5,7 @@ import { ConfigProviderInterface, DashboardConfig } from "./Types";
  * You must configure your visible dashboards here.
  */
 class StaticConfigProvider implements ConfigProviderInterface {
-  dashboards: DashboardConfig[];
+  dashboards: DashboardConfig[] = [];
   homePageDashboardConfig: DashboardConfig | undefined;
 
   /**
@@ -44,6 +44,14 @@ class StaticConfigProvider implements ConfigProviderInterface {
   }
   getDashboardConfigById(id: number): DashboardConfig | undefined {
     return this.dashboards.find((dashboard) => dashboard.id === id);
+  }
+
+  getDashboardConfig(identifier: string | number): DashboardConfig | undefined {
+    return (
+      this.getDashboardConfigBySlug(String(identifier)) ||
+      this.getDashboardConfigByUuid(String(identifier)) ||
+      this.getDashboardConfigById(Number(identifier))
+    );
   }
 
   getDashboardConfigs(): DashboardConfig[] {

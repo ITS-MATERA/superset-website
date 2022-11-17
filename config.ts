@@ -18,25 +18,6 @@ export const configProvider = new StaticConfigProvider()
     uuid: "a4b1e3e4-827a-46a2-9fa0-0259816c64ec",
     name: "Cronicità",
     menu: "Tumori",
-    slug: "tumori-cronicita",
+    slug: "cronicita-tumori",
   })
-  .setHomePageDashboardConfig("tumori-cronicita");
-
-export const HOME_PAGE_DASHBOARD_ID = "53740556-c6dc-4ab2-953e-f33917e07dbf";
-
-export const DASHBOARDS_TO_DISPLAY: MenuItem[] = [
-  {
-    label: "DEMO",
-    sections: [
-      {
-        name: "Tumori",
-        items: [
-          {
-            label: "Cronicità",
-            href: "/dashboard/a4b1e3e4-827a-46a2-9fa0-0259816c64ec",
-          },
-        ],
-      },
-    ],
-  },
-];
+  .setHomePageDashboardConfig("cronicita-tumori");

@@ -1,5 +1,5 @@
 import React from "react";
-import { SUPERSET_DOMAIN } from "../../config";
+import { SUPERSET_DOMAIN } from "config";
 import { useTranslation } from "next-i18next";
 
 const AccessTopWrapper = ({

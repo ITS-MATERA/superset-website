@@ -32,7 +32,7 @@ const Layout = ({ children, fullwidth = false }) => {
         <Header title={t("header.top.title")} tag={t("header.top.tag")} />
         <div
           className={classNames(
-            "container-fluid",
+            fullwidth ? "container-fluid" : "container",
             fullwidth && classes.fullwidth
           )}
         >

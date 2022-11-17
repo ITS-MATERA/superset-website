@@ -1,19 +1,21 @@
-import { SUPERSET_DOMAIN, dataProvider } from "../../config";
-
 import { Dashboard } from "superset-dashboard-sdk";
-import { Layout } from "../../components";
+import { Layout } from "components";
+import { SUPERSET_DOMAIN } from "config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
+import { useSupersetContext } from "components/Superset/SupersetContext";
 
-const Post = () => {
+export default () => {
   const router = useRouter();
-  const { uuid } = router.query;
-  const id = (uuid as string) || null;
+  const { slug } = router.query;
+  const id = (slug as string) || null;
+  const { dataProvider, configProvider } = useSupersetContext();
+  const config = configProvider.getDashboardConfigBySlug(id);
   return (
     <Layout fullwidth>
       {id && (
         <Dashboard
-          id={id}
+          uuid={config.uuid}
           domain={SUPERSET_DOMAIN}
           dataProvider={dataProvider}
           fullheight
@@ -32,4 +34,3 @@ export const getServerSideProps = async ({ locale }) => {
     },
   };
 };
-export default Post;
