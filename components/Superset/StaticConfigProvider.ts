@@ -8,6 +8,20 @@ class StaticConfigProvider implements ConfigProviderInterface {
   dashboards: DashboardConfig[] = [];
   homePageDashboardConfig: DashboardConfig | undefined;
 
+  constructor(data: any[]) {
+    // Iterate over the dashboards and add them to the provider
+    data.forEach((dashboard: DashboardConfig) => {
+      this.addDashboardConfig(dashboard);
+      if (dashboard.home) {
+        this.setHomePageDashboardConfig(dashboard.uuid);
+      }
+    });
+  }
+
+  getAllDashboards(): DashboardConfig[] {
+    return this.dashboards;
+  }
+
   /**
    * Try to set home dashboard based on first matching in slug, uuid or id specified.
    * @param identifier The slug, uuid or id of the dashboard to set as home.

@@ -1,5 +1,5 @@
 import { FormProvider, useForm, useFormContext } from "react-hook-form";
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 
 import { Dashboard } from "superset-dashboard-sdk/build/DataProvider.types";
 import { DashboardConfig } from "components/Superset/Types";
@@ -9,9 +9,13 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
 export type NativeFilterPanelProps = {
+  /** Local static configuration of the dashboard to consume. */
   config: DashboardConfig;
+  /** Remote dashboard configuration loaded from rest API. */
   dashboard: Dashboard;
+  /** Guest token used to fetch data, needed to execute more API requests. */
   guestToken: string;
+  /** Where redirect user with valorized filters when formfill is completed. */
   targetPage?: string;
 };
 const NativeFilterContent = ({
@@ -38,7 +42,7 @@ const NativeFilterContent = ({
     [nativeFilters]
   );
   const methods = useForm({ defaultValues });
-  const onSubmit = (data) => {
+  const onSubmit = useCallback((data) => {
     const filters = Object.entries(data).reduce((filters, [key, value]) => {
       if (value) {
         filters[key] = value;
@@ -46,7 +50,7 @@ const NativeFilterContent = ({
       return filters;
     }, {});
     router.push(`${targetPage}/${config.slug}?${new URLSearchParams(filters)}`);
-  };
+  }, []);
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
@@ -55,8 +59,9 @@ const NativeFilterContent = ({
         {nativeFilters?.map((filter) => (
           <NativeFilter
             key={filter.id}
-            guestToken={guestToken}
             filter={filter}
+            filters={nativeFilters}
+            guestToken={guestToken}
           />
         ))}
         <div className="row mt-4">

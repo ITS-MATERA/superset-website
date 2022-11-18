@@ -6,10 +6,11 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Index = () => {
   const homeDashboard = configProvider.getHomePageDashboardConfig();
+  console.info(JSON.stringify(configProvider.dashboards));
   return (
     <Layout fullwidth>
       <Dashboard
-        id={homeDashboard.uuid}
+        uuid={homeDashboard.uuid}
         domain={SUPERSET_DOMAIN}
         dataProvider={dataProvider}
         fullheight
