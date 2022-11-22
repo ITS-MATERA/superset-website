@@ -14,3 +14,8 @@ export type MenuItem = Link & {
   items?: Link[];
   sections?: Section[];
 };
+
+export type Breadcrumb = {
+  href?: string;
+  label?: string;
+};

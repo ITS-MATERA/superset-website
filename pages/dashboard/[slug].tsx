@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
+import Breadcrumbs from "components/Breadcrumbs";
 import { Dashboard } from "superset-dashboard-sdk/build/DataProvider.types";
 import { Dashboard as EmbeddedDashboard } from "superset-dashboard-sdk";
 import { Layout } from "components";
@@ -21,16 +22,28 @@ export default () => {
       return [];
     }
     const nativeFilters = jsonMetadata?.native_filter_configuration;
-    const filters = nativeFilters?.map((filter) => ({
-      id: filter.id,
-      column: filter?.targets?.[0]?.column?.name,
-      operator: "IN",
-      value: router?.query[filter.id] as string,
-    }));
+    const filters = nativeFilters
+      ?.map((filter) => ({
+        id: filter.id,
+        column: filter?.targets?.[0]?.column?.name,
+        operator: "IN",
+        value: router?.query[filter.id] as string,
+      }))
+      .filter((f) => f.value !== undefined);
     return filters;
   }, [router.query, dashboard]);
+  const breadcrumbs = useMemo(() => {
+    const items = ["Dashboard", config.menu, config.section, config.name];
+    const filters = items.filter((item) => item !== undefined);
+    return filters.map((item, index) => ({
+      label: item,
+      active: index === filters.length - 1,
+    }));
+  }, [config]);
+
   return (
     <Layout fullwidth>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
       {dashboard === null && <Spinner />}
       {dashboard !== null && (
         <EmbeddedDashboard
