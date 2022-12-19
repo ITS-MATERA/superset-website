@@ -97,4 +97,18 @@ export default [
     slug: "home-page",
     home: true,
   },
+  {
+    id: 18,
+    uuid: "aa447420-1c67-4138-90dd-465860b1a7e6",
+    name: "Sintesi",
+    slug: "popolazione-sintesi",
+    menu: "Popolazione",
+  },
+  {
+    id: 19,
+    uuid: "1e5e4aba-c6bf-4589-9378-ca925dd696a8",
+    name: "Sintesi",
+    slug: "demografia-sintesi",
+    menu: "Demografia",
+  },
 ];

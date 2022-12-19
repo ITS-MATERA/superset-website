@@ -20,7 +20,7 @@ const Spinner = ({ fit = true }: SpinnerProps) => {
   if (fit) {
     return (
       <div className={classNames("row justify-content-center", classes.fit)}>
-        <div className="col-2">{component}</div>
+        <div className="col-2 text-center">{component}</div>
       </div>
     );
   }
