@@ -11,7 +11,7 @@ const App = ({ Component, pageProps }) => {
       dataProvider={dataProvider}
       configProvider={configProvider}
     >
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </SupersetContextProvider>
   );
 };
