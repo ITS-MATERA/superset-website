@@ -26,6 +26,14 @@ export type UseDashboardResult = {
   configProvider?: ConfigProviderInterface;
 };
 
+function createRLS(filters) {
+  let array = [];
+  filters.forEach((element) => {
+    array.push({ clause: element });
+  });
+  return array;
+}
+
 /**
  * Load all required informations to work with specific dashboard
  * loaded from superset API.
@@ -48,7 +56,7 @@ const useDashboard = ({
       // filters necessary to render everything.
       const guestToken = await dataProvider.fetchGuestToken(
         [{ id: dashboardConfig.uuid, type: "dashboard" }],
-        []
+        createRLS(dashboardConfig.filter)
       );
       const dashboard = await dataProvider.fetchDashboardInfo(
         guestToken,

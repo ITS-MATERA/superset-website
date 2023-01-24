@@ -38,6 +38,10 @@ export type DashboardConfig = {
    * Indicate if this dashboard should pass from the filter page before rendering.
    */
   prefilter?: boolean;
+  /**
+   * Specify any filter to apply on the dashboard
+   */
+  filter?: Array<string>;
 };
 
 /**
