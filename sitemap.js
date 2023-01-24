@@ -1,32 +1,32 @@
 export default [
-  {
-    id: 5,
-    uuid: "f58afb1f-b2ed-444b-98da-dfd8825169f7",
-    name: "Assistiti",
-    menu: "Cronicità",
-    slug: "cronicita-assistiti",
-  },
-  {
-    id: 6,
-    uuid: "38d58f05-27ac-40fb-bf08-061ab689241f",
-    name: "Tasso Grezzo",
-    menu: "Cronicità",
-    slug: "cronicita-tasso-grezzo",
-  },
-  {
-    id: 7,
-    uuid: "ea42cb50-971d-4586-9c93-e5361e183898",
-    name: "Tasso Standard",
-    menu: "Cronicità",
-    slug: "cronicita-tasso-standard",
-  },
-  {
-    id: 8,
-    uuid: "ee56542a-eea6-47a2-8078-4965cbd1e379",
-    name: "Rischio Relativo",
-    menu: "Cronicità",
-    slug: "cronicita-rischio-relativo",
-  },
+  // {
+  //   id: 5,
+  //   uuid: "f58afb1f-b2ed-444b-98da-dfd8825169f7",
+  //   name: "Assistiti",
+  //   menu: "Cronicità",
+  //   slug: "cronicita-assistiti",
+  // },
+  // {
+  //   id: 6,
+  //   uuid: "38d58f05-27ac-40fb-bf08-061ab689241f",
+  //   name: "Tasso Grezzo",
+  //   menu: "Cronicità",
+  //   slug: "cronicita-tasso-grezzo",
+  // },
+  // {
+  //   id: 7,
+  //   uuid: "ea42cb50-971d-4586-9c93-e5361e183898",
+  //   name: "Tasso Standard",
+  //   menu: "Cronicità",
+  //   slug: "cronicita-tasso-standard",
+  // },
+  // {
+  //   id: 8,
+  //   uuid: "ee56542a-eea6-47a2-8078-4965cbd1e379",
+  //   name: "Rischio Relativo",
+  //   menu: "Cronicità",
+  //   slug: "cronicita-rischio-relativo",
+  // },
   {
     id: 9,
     uuid: "99e2391f-7cb2-489d-b104-2cce52f360c3",
@@ -114,7 +114,7 @@ export default [
   {
     id: 20,
     uuid: "4039262f-8db2-4c9a-8e59-24a785af615e",
-    name: "Sintesi BPCO",
+    name: "BPCO",
     slug: "cronicita-sintesi-bpco",
     menu: "Cronicità",
     filter: ["patologia = 'BPCO'"],
@@ -122,7 +122,7 @@ export default [
   {
     id: 21,
     uuid: "002b1f06-b7f7-4570-ac2d-5e8603f85cae",
-    name: "Sintesi DIABETE",
+    name: "DIABETE",
     slug: "cronicita-sintesi-diabete",
     menu: "Cronicità",
     filter: ["patologia = 'DIABETE'"],
@@ -130,7 +130,7 @@ export default [
   {
     id: 22,
     uuid: "646f0736-16fa-4e80-8ec5-aeee2783ce4a",
-    name: "Sintesi IPERTENSIONE",
+    name: "IPERTENSIONE",
     slug: "cronicita-sintesi-ipertensione",
     menu: "Cronicità",
     filter: ["patologia = 'IPERTENSIONE'"],
@@ -138,7 +138,7 @@ export default [
   {
     id: 23,
     uuid: "3865f942-8c5a-462a-8f4e-efed469fc93d",
-    name: "Sintesi SCOMPENSO CARDIACO",
+    name: "SCOMPENSO CARDIACO",
     slug: "cronicita-sintesi-scompenso-cardiaco",
     menu: "Cronicità",
     filter: ["patologia = 'SCOMPENSO CARDIACO'"],
