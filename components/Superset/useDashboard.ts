@@ -28,7 +28,7 @@ export type UseDashboardResult = {
 
 function createRLS(filters) {
   let array = [];
-  filters.forEach((element) => {
+  filters?.forEach((element) => {
     array.push({ clause: element });
   });
   return array;
