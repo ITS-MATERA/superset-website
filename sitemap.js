@@ -143,4 +143,52 @@ export default [
     menu: "Cronicità",
     filter: ["patologia = 'SCOMPENSO CARDIACO'"],
   },
+  {
+    type: "group",
+    name: "Test",
+    slug: "test",
+    menu: "Test",
+    dashboards: [
+      {
+        slug: "test-1",
+      },
+      {
+        slug: "test-2",
+      },
+      {
+        slug: "test-3",
+      },
+      {
+        slug: "test-4",
+      },
+      {
+        slug: "test-5",
+      },
+    ],
+  },
+  {
+    id: 31,
+    slug: "test-1",
+    uuid: "602cbb62-0098-474e-870e-6f555250495d",
+  },
+  {
+    id: 34,
+    slug: "test-2",
+    uuid: "6fc1db4f-5845-4c47-b8f5-460f28898f7d",
+  },
+  {
+    id: 32,
+    slug: "test-3",
+    uuid: "a8201d46-1e57-4bac-abcd-f3e78a9311e9",
+  },
+  {
+    id: 35,
+    slug: "test-4",
+    uuid: "e3ba2757-0afa-4631-b7a3-9e8973bbef0f",
+  },
+  {
+    id: 33,
+    slug: "test-5",
+    uuid: "2d03358d-a8d3-4497-a263-030bb04ff62a",
+  },
 ];

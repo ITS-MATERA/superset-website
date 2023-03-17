@@ -1,10 +1,8 @@
 import Breadcrumbs from "components/Breadcrumbs";
-import { Dashboard as EmbeddedDashboard } from "superset-dashboard-sdk";
+import DashboardItem from "components/DashboardItem";
 import { Layout } from "components";
-import { SUPERSET_DOMAIN } from "config";
-import Spinner from "components/Spinner";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useDashboard } from "components/Superset";
+import { useConfig } from "components/Superset";
 import { useMemo } from "react";
 import { useRouter } from "next/router";
 
@@ -12,23 +10,7 @@ export default () => {
   const router = useRouter();
   const { slug } = router.query;
   const id = (slug as string) || null;
-  const { config, dashboard, guestToken } = useDashboard({ id });
-  const nativeFilters = useMemo(() => {
-    const jsonMetadata = dashboard?.getJsonMetadata();
-    if (jsonMetadata === null) {
-      return [];
-    }
-    const nativeFilters = jsonMetadata?.native_filter_configuration;
-    const filters = nativeFilters
-      ?.map((filter) => ({
-        id: filter.id,
-        column: filter?.targets?.[0]?.column?.name,
-        operator: "IN",
-        value: router?.query[filter.id] as string,
-      }))
-      .filter((f) => f.value !== undefined);
-    return filters;
-  }, [router.query, dashboard]);
+  const config = useConfig({ id });
   const breadcrumbs = useMemo(() => {
     const items = ["Dashboard", config.menu, config.section, config.name];
     const filters = items.filter((item) => item !== undefined);
@@ -37,23 +19,19 @@ export default () => {
       active: index === filters.length - 1,
     }));
   }, [config]);
-
+  const dashboards = useMemo<string[]>(() => {
+    if (config.type === "group") {
+      return config.dashboards.map((d) => d.slug);
+    }
+    return [config.slug];
+  }, [config]);
+  console.info("dashboards", dashboards);
   return (
     <Layout fullwidth>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
-      {dashboard === null && <Spinner />}
-      {dashboard !== null && (
-        <EmbeddedDashboard
-          uuid={config.uuid}
-          domain={SUPERSET_DOMAIN}
-          guestToken={guestToken}
-          nativeFilters={nativeFilters}
-          fullheight
-          uiConfig={{
-            hideTitle: true,
-          }}
-        />
-      )}
+      {dashboards.map((id) => (
+        <DashboardItem key={id} id={id} router={router} />
+      ))}
     </Layout>
   );
 };

@@ -2,6 +2,7 @@
  * Define the dashboard configuration.
  */
 export type DashboardConfig = {
+  type?: "dashboard" | "group";
   /**
    * Internal ID of the dashboard.
    * Required to query the API and obtain full dashboard infoes required to
@@ -42,6 +43,10 @@ export type DashboardConfig = {
    * Specify any filter to apply on the dashboard
    */
   filter?: Array<string>;
+  /**
+   * List of dashboards to display togheter.
+   */
+  dashboards?: DashboardConfig[];
 };
 
 /**
