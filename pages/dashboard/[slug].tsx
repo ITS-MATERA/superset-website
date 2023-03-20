@@ -21,11 +21,10 @@ export default () => {
   }, [config]);
   const dashboards = useMemo<string[]>(() => {
     if (config.type === "group") {
-      return config.dashboards.map((d) => d.slug);
+      return config.dashboards;
     }
     return [config.slug];
   }, [config]);
-  console.info("dashboards", dashboards);
   return (
     <Layout fullwidth>
       <Breadcrumbs breadcrumbs={breadcrumbs} />

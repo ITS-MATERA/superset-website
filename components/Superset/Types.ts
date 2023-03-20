@@ -45,8 +45,9 @@ export type DashboardConfig = {
   filter?: Array<string>;
   /**
    * List of dashboards to display togheter.
+   * You must specify the slug of the dashboard.
    */
-  dashboards?: DashboardConfig[];
+  dashboards?: string[];
 };
 
 /**

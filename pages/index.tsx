@@ -6,7 +6,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Index = () => {
   const homeDashboard = configProvider.getHomePageDashboardConfig();
-  console.info(JSON.stringify(configProvider.dashboards));
   return (
     <Layout fullwidth>
       <Dashboard

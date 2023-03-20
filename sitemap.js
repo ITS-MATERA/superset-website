@@ -1,32 +1,61 @@
+const createChronicPathologyGroup = (name) => {
+  const pathology = name.toUpperCase();
+  const routeName = name.split(" ").join("-").toLowerCase();
+
+  return [
+    {
+      name,
+      type: "group",
+      slug: `cronicità-prevalenza-${routeName}`,
+      menu: "Prevalenza",
+      dashboards: [
+        `malattie-croniche-prevalenza-regione-puglia-${routeName}`,
+        `malattie-croniche-prevalenza-provincie-distretti-${routeName}`,
+        `malattie-croniche-trend-prevalenza-area-geografica-${routeName}`,
+        `malattie-croniche-prevalenza-eta-sesso-${routeName}`,
+        `malattie-croniche-trend-prevalenza-eta-${routeName}`,
+        `malattie-croniche-trend-prevalenza-genere-${routeName}`,
+      ],
+    },
+    {
+      id: 37,
+      slug: `malattie-croniche-prevalenza-regione-puglia-${routeName}`,
+      uuid: "01645cf7-e2ff-44cd-a467-68c601227def",
+      filter: [`patologia = '${pathology}'`],
+    },
+    {
+      id: 31,
+      slug: `malattie-croniche-prevalenza-provincie-distretti-${routeName}`,
+      uuid: "602cbb62-0098-474e-870e-6f555250495d",
+      filter: [`patologia = '${pathology}'`],
+    },
+    {
+      id: 34,
+      slug: `malattie-croniche-trend-prevalenza-area-geografica-${routeName}`,
+      uuid: "6fc1db4f-5845-4c47-b8f5-460f28898f7d",
+      filter: [`patologia = '${pathology}'`],
+    },
+    {
+      id: 32,
+      slug: `malattie-croniche-prevalenza-eta-sesso-${routeName}`,
+      uuid: "a8201d46-1e57-4bac-abcd-f3e78a9311e9",
+      filter: [`patologia = '${pathology}'`],
+    },
+    {
+      id: 35,
+      slug: `malattie-croniche-trend-prevalenza-eta-${routeName}`,
+      uuid: "e3ba2757-0afa-4631-b7a3-9e8973bbef0f",
+      filter: [`patologia = '${pathology}'`],
+    },
+    {
+      id: 33,
+      slug: `malattie-croniche-trend-prevalenza-genere-${routeName}`,
+      uuid: "2d03358d-a8d3-4497-a263-030bb04ff62a",
+      filter: [`patologia = '${pathology}'`],
+    },
+  ];
+};
 export default [
-  // {
-  //   id: 5,
-  //   uuid: "f58afb1f-b2ed-444b-98da-dfd8825169f7",
-  //   name: "Assistiti",
-  //   menu: "Cronicità",
-  //   slug: "cronicita-assistiti",
-  // },
-  // {
-  //   id: 6,
-  //   uuid: "38d58f05-27ac-40fb-bf08-061ab689241f",
-  //   name: "Tasso Grezzo",
-  //   menu: "Cronicità",
-  //   slug: "cronicita-tasso-grezzo",
-  // },
-  // {
-  //   id: 7,
-  //   uuid: "ea42cb50-971d-4586-9c93-e5361e183898",
-  //   name: "Tasso Standard",
-  //   menu: "Cronicità",
-  //   slug: "cronicita-tasso-standard",
-  // },
-  // {
-  //   id: 8,
-  //   uuid: "ee56542a-eea6-47a2-8078-4965cbd1e379",
-  //   name: "Rischio Relativo",
-  //   menu: "Cronicità",
-  //   slug: "cronicita-rischio-relativo",
-  // },
   {
     id: 9,
     uuid: "99e2391f-7cb2-489d-b104-2cce52f360c3",
@@ -143,52 +172,8 @@ export default [
     menu: "Cronicità",
     filter: ["patologia = 'SCOMPENSO CARDIACO'"],
   },
-  {
-    type: "group",
-    name: "Test",
-    slug: "test",
-    menu: "Test",
-    dashboards: [
-      {
-        slug: "test-1",
-      },
-      {
-        slug: "test-2",
-      },
-      {
-        slug: "test-3",
-      },
-      {
-        slug: "test-4",
-      },
-      {
-        slug: "test-5",
-      },
-    ],
-  },
-  {
-    id: 31,
-    slug: "test-1",
-    uuid: "602cbb62-0098-474e-870e-6f555250495d",
-  },
-  {
-    id: 34,
-    slug: "test-2",
-    uuid: "6fc1db4f-5845-4c47-b8f5-460f28898f7d",
-  },
-  {
-    id: 32,
-    slug: "test-3",
-    uuid: "a8201d46-1e57-4bac-abcd-f3e78a9311e9",
-  },
-  {
-    id: 35,
-    slug: "test-4",
-    uuid: "e3ba2757-0afa-4631-b7a3-9e8973bbef0f",
-  },
-  {
-    id: 33,
-    slug: "test-5",
-    uuid: "2d03358d-a8d3-4497-a263-030bb04ff62a",
-  },
+  ...createChronicPathologyGroup("BPCO"),
+  ...createChronicPathologyGroup("Diabete"),
+  ...createChronicPathologyGroup("Ipertensione"),
+  ...createChronicPathologyGroup("Scompenso Cardiaco"),
 ];
