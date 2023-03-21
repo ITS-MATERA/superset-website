@@ -1,4 +1,4 @@
-import { Fragment, useMemo } from "react";
+import { Fragment, useEffect, useMemo, useRef } from "react";
 
 import { Dashboard as EmbeddedDashboard } from "superset-dashboard-sdk";
 import { NextRouter } from "next/router";
@@ -9,10 +9,18 @@ import { useDashboard } from "components/Superset";
 export type DashboardItemProps = {
   id: string;
   router: NextRouter;
+  showLoading?: boolean;
+  onLoad?: (id: string) => void;
 };
 
-const DashboardItem = ({ id, router }: DashboardItemProps) => {
+const DashboardItem = ({
+  id,
+  router,
+  onLoad,
+  showLoading = true,
+}: DashboardItemProps) => {
   const { config, dashboard, guestToken } = useDashboard({ id });
+  const loaded = useRef(false);
   const nativeFilters = useMemo(() => {
     const jsonMetadata = dashboard?.getJsonMetadata();
     if (jsonMetadata === null) {
@@ -29,9 +37,15 @@ const DashboardItem = ({ id, router }: DashboardItemProps) => {
       .filter((f) => f.value !== undefined);
     return filters;
   }, [router.query, dashboard]);
+  useEffect(() => {
+    if (dashboard !== null && !loaded.current) {
+      loaded.current = true;
+      onLoad?.(id);
+    }
+  }, [dashboard]);
   return (
     <Fragment>
-      {dashboard === null && <Spinner />}
+      {dashboard === null && showLoading && <Spinner />}
       {dashboard !== null && (
         <EmbeddedDashboard
           uuid={config.uuid}
