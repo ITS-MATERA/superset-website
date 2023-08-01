@@ -12,7 +12,7 @@ const createChronicPathologyGroup = (name) => {
     },
     {
       id: 58,
-      slug: `malattie-croniche-${routeName}`,
+      slug: `malattie-croniche-prevalenza-${routeName}`,
       uuid: "9ba83516-752c-480f-af2e-1094604a9ad2",
       filter: [`patologia = '${pathology}'`],
     },
