@@ -1,4 +1,4 @@
-import $ from "jquery";
+//import $ from "jquery";
 import { DefaultDataProvider } from "superset-dashboard-sdk";
 import StaticConfigProvider from "./components/Superset/StaticConfigProvider";
 import sitemap from "./sitemap.js";
