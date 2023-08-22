@@ -43,6 +43,13 @@ const DashboardItem = ({
       onLoad?.(id);
     }
   }, [dashboard]);
+  const mkt = [`patologia = 'BPCO'`].map((x) => ({
+    id: "patologia",
+    column: "patologia",
+    operator: "IN",
+    value: "BPCO",
+  }));
+
   return (
     <Fragment>
       {dashboard === null && showLoading && <Spinner />}
@@ -51,7 +58,7 @@ const DashboardItem = ({
           uuid={config.uuid}
           domain={SUPERSET_DOMAIN}
           guestToken={guestToken}
-          nativeFilters={nativeFilters}
+          nativeFilters={mkt}
           fullheight
           uiConfig={{
             hideTitle: true,
