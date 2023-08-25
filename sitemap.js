@@ -19,6 +19,8 @@ const createChronicPathologyGroup = (name) => {
     },
   ];
 };
+
+//change
 export default [
   {
     id: 3,
