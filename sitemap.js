@@ -20,7 +20,6 @@ const createChronicPathologyGroup = (name) => {
   ];
 };
 
-//change
 export default [
   {
     id: 3,
@@ -30,13 +29,6 @@ export default [
     home: true,
   },
   {
-    id: 53,
-    uuid: "e6c603ff-998b-4763-804b-13116571b68d",
-    name: "Popolazione",
-    slug: "popolazione-sintesi",
-    menu: "Popolazione e Demografia",
-  },
-  {
     id: 57,
     uuid: "1cf1e7d5-d550-4334-9394-319f7ff4d4a9",
     name: "Demografia",
@@ -44,10 +36,24 @@ export default [
     menu: "Popolazione e Demografia",
   },
   {
+    id: 53,
+    uuid: "e6c603ff-998b-4763-804b-13116571b68d",
+    name: "Popolazione",
+    slug: "popolazione-sintesi",
+    menu: "Popolazione e Demografia",
+  },
+  {
     id: 58,
     uuid: "9ba83516-752c-480f-af2e-1094604a9ad2",
     name: "BPCO",
     slug: "bpco-sintesi",
+    menu: "Cronicità",
+  },
+  {
+    id: 61,
+    uuid: "4dc2d2a3-fc4f-4f83-9421-f854096defca",
+    name: "Diabete",
+    slug: "diabete-sintesi",
     menu: "Cronicità",
   },
   {
@@ -62,13 +68,6 @@ export default [
     uuid: "554d3f86-06c3-45dc-8102-d28e0b0cbe52",
     name: "Scompenso cardiaco",
     slug: "scompenso-cardiaco-sintesi",
-    menu: "Cronicità",
-  },
-  {
-    id: 61,
-    uuid: "4dc2d2a3-fc4f-4f83-9421-f854096defca",
-    name: "Diabete",
-    slug: "diabete-sintesi",
     menu: "Cronicità",
   },
 ];
