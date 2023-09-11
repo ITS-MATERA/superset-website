@@ -29,17 +29,17 @@ export default [
     home: true,
   },
   {
-    id: 57,
-    uuid: "1cf1e7d5-d550-4334-9394-319f7ff4d4a9",
-    name: "Demografia",
-    slug: "demografia-sintesi",
-    menu: "Popolazione e Demografia",
-  },
-  {
     id: 53,
     uuid: "e6c603ff-998b-4763-804b-13116571b68d",
     name: "Popolazione",
     slug: "popolazione-sintesi",
+    menu: "Popolazione e Demografia",
+  },
+  {
+    id: 57,
+    uuid: "1cf1e7d5-d550-4334-9394-319f7ff4d4a9",
+    name: "Demografia",
+    slug: "demografia-sintesi",
     menu: "Popolazione e Demografia",
   },
   {
