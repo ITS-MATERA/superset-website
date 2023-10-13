@@ -1,21 +1,21 @@
 const createChronicPathologyGroup = (name) => {
-  const pathology = name.toUpperCase();
+  // const pathology = name.toUpperCase();
   const routeName = name.split(" ").join("-").toLowerCase();
 
   return [
     {
       name,
       type: "group",
-      slug: `cronicità-prevalenza-${routeName}`,
-      menu: "Cronicità",
-      dashboards: [`malattie-croniche-${routeName}`],
+      slug: `tumori-prevalenza-${routeName}`,
+      menu: "Tumori",
+      dashboards: [`malattie-tumori-${routeName}`],
     },
     {
-      id: 58,
-      slug: `malattie-croniche-${routeName}`,
-      uuid: "9ba83516-752c-480f-af2e-1094604a9ad2",
+      id: 68,
+      slug: `malattie-tumori-${routeName}`,
+      uuid: "4990ef93-0b63-4014-b781-4c49fcfcc595",
       //filter: [`patologia = '${pathology}'`],
-      filter: [`patologia = 'BPCO'`],
+      filter: [`patologia = '${name}'`],
     },
   ];
 };
@@ -70,4 +70,7 @@ export default [
     slug: "scompenso-cardiaco-sintesi",
     menu: "Cronicità",
   },
+  ...createChronicPathologyGroup("Rene"),
+  ...createChronicPathologyGroup("Fegato"),
+  ...createChronicPathologyGroup("Stomaco"),
 ];
