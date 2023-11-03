@@ -1,25 +1,3 @@
-const createChronicPathologyGroup = (name) => {
-  // const pathology = name.toUpperCase();
-  const routeName = name.split(" ").join("-").toLowerCase();
-
-  return [
-    {
-      name,
-      type: "group",
-      slug: `tumori-prevalenza-${routeName}`,
-      menu: "Tumori",
-      dashboards: [`malattie-tumori-${routeName}`],
-    },
-    {
-      id: 68,
-      slug: `malattie-tumori-${routeName}`,
-      uuid: "4990ef93-0b63-4014-b781-4c49fcfcc595",
-      //filter: [`patologia = '${pathology}'`],
-      filter: [`patologia = '${name}'`],
-    },
-  ];
-};
-
 export default [
   {
     id: 3,
@@ -70,7 +48,11 @@ export default [
     slug: "scompenso-cardiaco-sintesi",
     menu: "Cronicità",
   },
-  ...createChronicPathologyGroup("Rene"),
-  ...createChronicPathologyGroup("Fegato"),
-  ...createChronicPathologyGroup("Stomaco"),
+  {
+    id: 67,
+    uuid: "f505fe43-201b-464f-bbf6-a0b599919871",
+    name: "Polmone",
+    slug: "polmone-sintesi",
+    menu: "Tumori",
+  },
 ];

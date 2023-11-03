@@ -58,7 +58,7 @@ const DashboardItem = ({
           uuid={config.uuid}
           domain={SUPERSET_DOMAIN}
           guestToken={guestToken}
-          nativeFilters={mkt}
+          nativeFilters={nativeFilters}
           fullheight
           uiConfig={{
             hideTitle: true,
