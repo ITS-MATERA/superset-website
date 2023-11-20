@@ -55,6 +55,10 @@ const NavbarWrapper = ({ menu = [] }: NavbarWrapperProps) => {
                           label={menu.label}
                           items={menu.items}
                           sections={menu.sections}
+                          style={{
+                            "max-height": "300px",
+                            "overflow-y": "scroll",
+                          }}
                         />
                       ) : (
                         <li

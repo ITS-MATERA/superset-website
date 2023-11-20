@@ -10,6 +10,7 @@ export type DropdownProps = {
   selected?: string;
   sections?: Section[];
   as?: React.ElementType;
+  style?: {};
 };
 
 const render = (className = "col-12", sectionName, items, index = 0) => (
@@ -47,6 +48,7 @@ const Dropdown = ({
   items,
   sections,
   as,
+  style,
 }: DropdownProps) => {
   const { t } = useTranslation("common");
   const Component = as || "div";
@@ -64,7 +66,7 @@ const Dropdown = ({
           <use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
         </svg>
       </a>
-      <div className="dropdown-menu" role="region">
+      <div className="dropdown-menu" role="region" style={style}>
         <div className="row">
           {items && render("col-lg-12", sectionName, items)}
           {sections?.map((section, index) =>
