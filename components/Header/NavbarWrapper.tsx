@@ -58,6 +58,7 @@ const NavbarWrapper = ({ menu = [] }: NavbarWrapperProps) => {
                           style={{
                             "max-height": "300px",
                             "overflow-y": "scroll",
+                            "overflow-x": "hidden",
                           }}
                         />
                       ) : (
