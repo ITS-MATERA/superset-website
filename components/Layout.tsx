@@ -22,7 +22,7 @@ const Layout = ({ children, fullwidth = false }) => {
   const [error, setError] = useState("");
 
   const handlePasswordSubmit = () => {
-    const correctPassword = "aresspuglia2023!";
+    const correctPassword = "areSSpuglia2023!";
     if (password === correctPassword) {
       setShowDashboard(true);
     } else {
