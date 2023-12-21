@@ -13,6 +13,7 @@ export type LayoutProps = {
   children: React.ReactNode;
   fullwidth?: boolean;
 };
+
 const Layout = ({ children, fullwidth = false }) => {
   const { t: seo } = useTranslation("seo");
   const { t } = useTranslation("common");
@@ -21,7 +22,7 @@ const Layout = ({ children, fullwidth = false }) => {
   const [error, setError] = useState("");
 
   const handlePasswordSubmit = () => {
-    const correctPassword = "ciao";
+    const correctPassword = "aresspuglia2023!";
     if (password === correctPassword) {
       setShowDashboard(true);
     } else {
@@ -58,6 +59,7 @@ const Layout = ({ children, fullwidth = false }) => {
             />
             <button
               style={{
+                marginTop: "3%",
                 background: "#660b0e",
                 color: "white",
                 borderRadius: "2px",
@@ -69,7 +71,7 @@ const Layout = ({ children, fullwidth = false }) => {
             {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
         ) : (
-          <div style={{ padding: 0, margin: 0 }}>
+          <div style={{ padding: 0, margin: 0, width: "100%", height: "100%" }}>
             <Head>
               <title>{seo("title")}</title>
               <meta name="description" content={seo("description")} />
