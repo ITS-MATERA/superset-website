@@ -20,6 +20,7 @@ const Layout = ({ children, fullwidth = false }) => {
   const [password, setPassword] = useState("");
   const [showDashboard, setShowDashboard] = useState(false);
   const [error, setError] = useState("");
+  const [loadChart, setLoadChart] = useState(true);
 
   const handlePasswordSubmit = () => {
     const correctPassword = "areSSpuglia2023!";
@@ -85,7 +86,9 @@ const Layout = ({ children, fullwidth = false }) => {
               <Header title={t("header.top.title")} tag={t("header.top.tag")} />
               <div
                 className={classNames(
-                  fullwidth ? "container-fluid" : "container",
+                  fullwidth
+                    ? "container-fluid dash-class"
+                    : "container dash-class",
                   fullwidth && classes.fullwidth
                 )}
               >
