@@ -38,14 +38,14 @@ export default () => {
 
   const allLoaded = () => {
     if (document.getElementsByClassName("loadingoverlay")) {
+      console.log("All loaded in react app");
       setLoad(true);
     }
   };
   return (
     <Layout fullwidth>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
-      {isLoading && <Spinner />}
-      {allLoaded && <Spinner />}
+      {isLoading && <Spinner /> && allLoaded}
       {dashboards.map((id) => (
         <DashboardItem
           key={id}
