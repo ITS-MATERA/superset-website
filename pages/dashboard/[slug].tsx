@@ -29,16 +29,23 @@ export default () => {
     return [config.slug];
   }, [config]);
   const [loaded, setLoaded] = useState({});
+  const [load, setLoad] = useState(false);
   const onLoad = (id: string) => {
     setLoaded({ ...loaded, [id]: true });
   };
   const isLoading =
     Object.keys(loaded).length !== dashboards.length && dashboards.length > 1;
 
+  const allLoaded = () => {
+    if (document.getElementsByClassName("loadingoverlay")) {
+      setLoad(true);
+    }
+  };
   return (
     <Layout fullwidth>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       {isLoading && <Spinner />}
+      {allLoaded && <Spinner />}
       {dashboards.map((id) => (
         <DashboardItem
           key={id}
