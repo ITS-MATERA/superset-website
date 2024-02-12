@@ -55,4 +55,25 @@ export default [
     slug: "polmone-sintesi",
     menu: "Tumori",
   },
+  {
+    id: 72,
+    uuid: "fa334a5e-c2d3-4dcc-ac64-482088882f48",
+    name: "Test1",
+    slug: "test-1",
+    menu: "Test",
+  },
+  {
+    id: 73,
+    uuid: "e7023547-8dea-4883-bd72-1928e3d4bfb2",
+    name: "Test2",
+    slug: "test-2",
+    menu: "Test",
+  },
+  {
+    id: 74,
+    uuid: "8d1da305-24b6-444b-b0b6-418dfc0c87c7",
+    name: "Test3",
+    slug: "test-3",
+    menu: "Test",
+  },
 ];
