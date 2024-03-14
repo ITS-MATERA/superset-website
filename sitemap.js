@@ -49,8 +49,8 @@ export default [
     menu: "Cronicità",
   },
   {
-    id: 70,
-    uuid: "37d5c2c5-a776-446a-a951-9397cd1a8983",
+    id: 71,
+    uuid: "e595a458-16d3-49ce-9315-4457f4bb0c8f",
     name: "Polmone",
     slug: "polmone-sintesi",
     menu: "Tumori",
