@@ -39,7 +39,11 @@ const CenterWrapper = ({ title = "Superset", tag = "Data Explorer" }) => {
                   <span>Seguici su</span>
                   <ul>
                     <li>
-                      <a href="#" aria-label="Facebook" target="_blank">
+                      <a
+                        href="https://www.facebook.com/aresspuglia/?locale=it_IT"
+                        aria-label="Facebook"
+                        target="_blank"
+                      >
                         <svg className="icon">
                           <use href="/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
                         </svg>
@@ -53,7 +57,11 @@ const CenterWrapper = ({ title = "Superset", tag = "Data Explorer" }) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#" aria-label="Twitter" target="_blank">
+                      <a
+                        href="https://twitter.com/AressPuglia"
+                        aria-label="Twitter"
+                        target="_blank"
+                      >
                         <svg className="icon">
                           <use href="/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
                         </svg>

@@ -38,7 +38,7 @@ const Footer = ({ title, tag }: FooterProps) => {
           </section>
         </div>
       </div>
-      <SmallPrints />
+      {/* <SmallPrints /> */}
     </footer>
   );
 };

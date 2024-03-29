@@ -58,7 +58,7 @@ const SlimWrapper = ({
                   </div>
                 </nav>
               </div>
-              <div className="it-header-slim-right-zone">
+              {/* <div className="it-header-slim-right-zone">
                 <Dropdown
                   label={t("header.top.choose_lang")}
                   selected="IT"
@@ -69,9 +69,9 @@ const SlimWrapper = ({
                       active: true,
                     },
                   ]}
-                />
-                <AccessTopWrapper />
-              </div>
+                /> */}
+              <AccessTopWrapper />
+              {/* </div> */}
             </div>
           </div>
         </div>
