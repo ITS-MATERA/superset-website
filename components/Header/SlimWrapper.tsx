@@ -40,7 +40,7 @@ const SlimWrapper = ({
                     </svg>
                   </a>
                   <div className="link-list-wrapper collapse" id="menu1a">
-                    <ul className="link-list">
+                    {/* <ul className="link-list">
                       {links.map((link) => (
                         <li key={link.href}>
                           <a
@@ -54,7 +54,7 @@ const SlimWrapper = ({
                           </a>
                         </li>
                       ))}
-                    </ul>
+                    </ul> */}
                   </div>
                 </nav>
               </div>

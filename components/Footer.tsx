@@ -12,8 +12,8 @@ const Footer = ({ title, tag }: FooterProps) => {
           <section>
             <div className="row clearfix">
               <div className="col-sm-12 col-lg-4 col-md-6">
-                <div className="it-brand-wrapper">
-                  <a href="#">
+                <div className="it-brand-wrapper" style={{ width: "380px" }}>
+                  <a href="https://maps.app.goo.gl/TyuDcENeq2Ncum9j8">
                     <svg className="icon">
                       <use href="/bootstrap-italia/dist/svg/sprites.svg#it-code-circle"></use>
                     </svg>

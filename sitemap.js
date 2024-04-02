@@ -114,7 +114,7 @@ export default [
   {
     id: 88,
     uuid: "cd000106-bca2-4d39-9b0a-5e26318c0386",
-    name: "Mammella",
+    name: "Mammella Femminile",
     slug: "Mammella-sintesi",
     menu: "Tumori",
   },
