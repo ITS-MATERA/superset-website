@@ -49,6 +49,13 @@ export default [
     menu: "Cronicità",
   },
   {
+    id: 102,
+    uuid: "43a0a63a-27c9-4b07-8299-830defa42f21",
+    name: "Tutti i tumori",
+    slug: "Totale-sintesi",
+    menu: "Tumori",
+  },
+  {
     id: 78,
     uuid: "ac0709e5-79f2-4273-a4ed-9658a8a729a3",
     name: "Colon-retto",
@@ -200,13 +207,6 @@ export default [
     uuid: "ed0a075c-095c-41a5-942d-b2c0f5ff6fdc",
     name: "Tiroide",
     slug: "Tiroide-sintesi",
-    menu: "Tumori",
-  },
-  {
-    id: 102,
-    uuid: "43a0a63a-27c9-4b07-8299-830defa42f21",
-    name: "Totale",
-    slug: "Totale-sintesi",
     menu: "Tumori",
   },
   {
