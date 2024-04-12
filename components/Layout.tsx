@@ -17,19 +17,8 @@ export type LayoutProps = {
 const Layout = ({ children, fullwidth = false }) => {
   const { t: seo } = useTranslation("seo");
   const { t } = useTranslation("common");
-  const [password, setPassword] = useState("");
-  const [showDashboard, setShowDashboard] = useState(false);
   const [error, setError] = useState("");
   const [loadChart, setLoadChart] = useState(true);
-
-  const handlePasswordSubmit = () => {
-    const correctPassword = "areSSpuglia2023!";
-    if (password === correctPassword) {
-      setShowDashboard(true);
-    } else {
-      setError("Password errata");
-    }
-  };
 
   return (
     <>
@@ -41,64 +30,32 @@ const Layout = ({ children, fullwidth = false }) => {
           height: "100vh",
         }}
       >
-        {!showDashboard ? (
-          <div
-            style={{
-              width: "40%",
-              padding: "5%",
-              border: "1px solid #660b0e",
-              borderRadius: "1.5%",
-              textAlign: "center",
-            }}
-          >
-            <h6>Inserisci la password per accedere</h6>
-            <input
-              style={{ border: "1px solid #660b0e", borderRadius: "2px" }}
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button
-              style={{
-                marginTop: "3%",
-                background: "#660b0e",
-                color: "white",
-                borderRadius: "2px",
-              }}
-              onClick={handlePasswordSubmit}
+        <div style={{ padding: 0, margin: 0, width: "100%", height: "100%" }}>
+          <Head>
+            <title>{seo("title")}</title>
+            <meta name="description" content={seo("description")} />
+            <meta name="keywords" content={seo("keywords")} />
+            <meta name="author" content={seo("author")} />
+            {/** favicon */}
+            <link rel="icon" href={favicon.src} />
+            <NextSeo title={seo("title")} description={seo("description")} />
+          </Head>
+          <div>
+            <Header title={t("header.top.title")} tag={t("header.top.tag")} />
+            <div
+              className={classNames(
+                fullwidth
+                  ? "container-fluid dash-class"
+                  : "container dash-class",
+                fullwidth && classes.fullwidth
+              )}
             >
-              Accedi
-            </button>
-            {error && <p style={{ color: "red" }}>{error}</p>}
-          </div>
-        ) : (
-          <div style={{ padding: 0, margin: 0, width: "100%", height: "100%" }}>
-            <Head>
-              <title>{seo("title")}</title>
-              <meta name="description" content={seo("description")} />
-              <meta name="keywords" content={seo("keywords")} />
-              <meta name="author" content={seo("author")} />
-              {/** favicon */}
-              <link rel="icon" href={favicon.src} />
-              <NextSeo title={seo("title")} description={seo("description")} />
-            </Head>
-            <div>
-              <Header title={t("header.top.title")} tag={t("header.top.tag")} />
-              <div
-                className={classNames(
-                  fullwidth
-                    ? "container-fluid dash-class"
-                    : "container dash-class",
-                  fullwidth && classes.fullwidth
-                )}
-              >
-                {children}
-              </div>
+              {children}
             </div>
-            <Footer title={t("footer.title")} tag={t("footer.tag")} />
-            <Script src="/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js" />
           </div>
-        )}
+          <Footer title={t("footer.title")} tag={t("footer.tag")} />
+          <Script src="/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js" />
+        </div>
       </div>
     </>
   );
